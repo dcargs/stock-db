@@ -11,6 +11,7 @@ password_str=`docker logs stock-db 2>&1 | grep GENERATE`
 IFS=' '
 read -a password_arr <<< "$password_str"
 password=${password_arr[4]}
+echo "$password"
 
 read -sp 'Root Password: ' new_password
 echo ""
