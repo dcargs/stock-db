@@ -3,9 +3,9 @@ docker rm stock-db
 git pull origin setup
 docker pull mysql/mysql-server
 docker run --name=stock-db -d mysql/mysql-server
-echo "Sleeping for 10 seconds to let the instance start"
+echo "Sleeping for 30 seconds to let the instance start"
 
-sleep  10
+sleep  30
 password_str=`docker logs stock-db 2>&1 | grep GENERATE`
 # Set space as the delimiter
 IFS=' '
